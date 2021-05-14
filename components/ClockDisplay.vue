@@ -1,7 +1,14 @@
 <template>
-  <div class="container flex-col">
+  <div class="container mt-8 flex-col">
     <figure>
-      <h1 class="text-8xl p-8 pieton-red-light-bg pieton-blue-dark-fg">
+      <h1
+        class="
+          text-8xl
+          p-8
+          rounded-full
+          pieton-red-light-bg pieton-blue-dark-fg
+        "
+      >
         {{ pomodoro.shortBreak }}
       </h1>
       <figcaption class="text-left">
@@ -15,7 +22,7 @@
       </figcaption>
     </figure>
     <figure>
-      <h1 class="text-8xl p-8 pieton-red-bg pieton-yellow-fg">
+      <h1 class="text-8xl p-8 rounded-full pieton-red-bg pieton-yellow-fg">
         {{ pomodoro.longBreak }}
       </h1>
       <figcaption class="text-left">
@@ -29,7 +36,7 @@
       </figcaption>
     </figure>
     <figure>
-      <h1 class="text-8xl p-8 pieton-blue-bg pieton-near-white-fg">
+      <h1 class="text-8xl p-8 rounded-full pieton-blue-bg pieton-near-white-fg">
         {{ pomodoro.pomodoro }}
       </h1>
       <figcaption class="text-left">
