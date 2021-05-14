@@ -1,11 +1,17 @@
 <template>
   <div class="container">
-    <h1 class="pieton-blue-fg">pomodoro</h1>
+    <h1 class="pieton-blue-fg">{{ pomodoro.shortBreak }}</h1>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    pomodoro() {
+      return this.$store.state.timer
+    },
+  },
+}
 </script>
 
 <style>

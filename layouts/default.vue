@@ -1,13 +1,16 @@
 <template>
   <div>
+    <header class="pieton-red-dark-bg h-auto flex justify-center">
+      <h1 class="pieton-blue-light-fg text-8xl py-8">pomodoro timer</h1>
+    </header>
     <Nuxt />
   </div>
 </template>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Alata', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
