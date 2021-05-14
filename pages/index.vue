@@ -1,11 +1,16 @@
 <template>
   <div class="container">
     <h1 class="pieton-blue-fg">{{ pomodoro.shortBreak }}</h1>
+    <clock-display></clock-display>
   </div>
 </template>
 
 <script>
+import ClockDisplay from '~/components/ClockDisplay.vue'
+
 export default {
+  components: { ClockDisplay },
+
   computed: {
     pomodoro() {
       return this.$store.state.timer
