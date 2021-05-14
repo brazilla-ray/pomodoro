@@ -1,15 +1,58 @@
 <template>
-  <div class="container">
+  <div class="container flex-col">
     <figure>
-      <code>
-        <h2>lorem borem</h2>
-      </code>
+      <h1 class="text-8xl p-8 pieton-red-light-bg pieton-blue-dark-fg">
+        {{ pomodoro.shortBreak }}
+      </h1>
+      <figcaption class="text-left">
+        <pre>
+          <code>
+&lt;h1&gt;
+  &lbrace; &lbrace; pomodoro.shortBreak &rbrace; &rbrace;
+&lt;/h1&gt;
+          </code>
+        </pre>
+      </figcaption>
+    </figure>
+    <figure>
+      <h1 class="text-8xl p-8 pieton-red-bg pieton-yellow-fg">
+        {{ pomodoro.longBreak }}
+      </h1>
+      <figcaption class="text-left">
+        <pre>
+          <code>
+&lt;h1&gt;
+  &lbrace; &lbrace; pomodoro.longBreak &rbrace; &rbrace;
+&lt;/h1&gt;
+          </code>
+        </pre>
+      </figcaption>
+    </figure>
+    <figure>
+      <h1 class="text-8xl p-8 pieton-blue-bg pieton-near-white-fg">
+        {{ pomodoro.pomodoro }}
+      </h1>
+      <figcaption class="text-left">
+        <pre>
+          <code>
+&lt;h1&gt;
+  &lbrace; &lbrace; pomodoro.pomodoro &rbrace; &rbrace;
+&lt;/h1&gt;
+          </code>
+        </pre>
+      </figcaption>
     </figure>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    pomodoro() {
+      return this.$store.state.timer
+    },
+  },
+}
 </script>
 
 <style lang="css" scoped>
