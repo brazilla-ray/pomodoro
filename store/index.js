@@ -1,11 +1,14 @@
-const timer = {
+const mode = {
   pomodoro: 25,
   shortBreak: 5,
   longBreak: 15,
-  longBreakInterval: 4,
-  sessions: 0,
 }
 
+const total = mode
+const currentTime = Date.parse(new Date())
+
 export const state = () => ({
-  timer,
+  currentTime,
+  mode,
+  total,
 })

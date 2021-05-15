@@ -3,7 +3,47 @@
     <header class="pieton-red-dark-bg h-auto flex justify-center">
       <h1 class="pieton-blue-light-fg text-8xl py-8">pomodoro timer</h1>
     </header>
-    <Nuxt />
+    <div class="flex">
+      <div class="order-2 flex-auto w-96 pt-8">
+        <main>
+          <Nuxt />
+        </main>
+      </div>
+      <div
+        class="
+          order-1
+          flex-initial
+          px-8
+          pt-8
+          pieton-blue-dark-bg pieton-blue-light-fg
+        "
+      >
+        <aside>
+          <section>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate, rerum at modi, fugiat enim, consectetur saepe ab
+              deserunt perspiciatis praesentium nulla quibusdam! Laboriosam
+              optio, eligendi dolorum et at iste dolor?
+            </p>
+          </section>
+        </aside>
+      </div>
+      <div
+        class="order-3 flex-auto px-8 pt-8 pieton-blue-dark-bg pieton-yellow-fg"
+      >
+        <aside>
+          <section>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate, rerum at modi, fugiat enim, consectetur saepe ab
+              deserunt perspiciatis praesentium nulla quibusdam! Laboriosam
+              optio, eligendi dolorum et at iste dolor?
+            </p>
+          </section>
+        </aside>
+      </div>
+    </div>
   </div>
 </template>
 

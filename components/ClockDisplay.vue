@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-8 flex-col">
+  <div class="flex-col">
     <figure>
       <h1
         class="
@@ -9,13 +9,13 @@
           pieton-red-light-bg pieton-blue-dark-fg
         "
       >
-        {{ pomodoro.shortBreak }}
+        {{ mode.shortBreak }}
       </h1>
       <figcaption class="text-left">
         <pre>
-          <code>
+          <code v-pre>
 &lt;h1&gt;
-  &lbrace; &lbrace; pomodoro.shortBreak &rbrace; &rbrace;
+  {{ mode.shortBreak }}
 &lt;/h1&gt;
           </code>
         </pre>
@@ -23,13 +23,13 @@
     </figure>
     <figure>
       <h1 class="text-8xl p-8 rounded-full pieton-red-bg pieton-yellow-fg">
-        {{ pomodoro.longBreak }}
+        {{ mode.longBreak }}
       </h1>
       <figcaption class="text-left">
         <pre>
-          <code>
+          <code v-pre>
 &lt;h1&gt;
-  &lbrace; &lbrace; pomodoro.longBreak &rbrace; &rbrace;
+  {{ mode.longBreak }}
 &lt;/h1&gt;
           </code>
         </pre>
@@ -37,26 +37,34 @@
     </figure>
     <figure>
       <h1 class="text-8xl p-8 rounded-full pieton-blue-bg pieton-near-white-fg">
-        {{ pomodoro.pomodoro }}
+        {{ mode.pomodoro }}
       </h1>
       <figcaption class="text-left">
         <pre>
-          <code>
+          <code v-pre>
 &lt;h1&gt;
-  &lbrace; &lbrace; pomodoro.pomodoro &rbrace; &rbrace;
+  {{ mode.pomodoro }}
 &lt;/h1&gt;
           </code>
         </pre>
       </figcaption>
     </figure>
+    <h3>{{ currentTime }}</h3>
+    <button>start</button>
   </div>
 </template>
 
 <script>
 export default {
   computed: {
-    pomodoro() {
-      return this.$store.state.timer
+    mode() {
+      return this.$store.state.mode
+    },
+    total() {
+      return this.$store.state.total
+    },
+    currentTime() {
+      return this.$store.state.currentTime
     },
   },
 }
