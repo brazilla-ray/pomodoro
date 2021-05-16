@@ -51,7 +51,8 @@
     </figure>
     <section>
       <button>start</button>
-      <button>pomodoro</button>
+      <h3>{{ currentMode }}</h3>
+      <button @click="switchMode">pomodoro</button>
       <button>short break</button>
       <button>long break</button>
       <button @click="increment">sessionCount</button>
@@ -66,6 +67,9 @@ export default {
     mode() {
       return this.$store.state.mode
     },
+    currentMode() {
+      return this.$store.state.currentMode
+    },
     sessionCount() {
       return this.$store.state.sessionCount
     },
@@ -77,6 +81,9 @@ export default {
       } else {
         return this.$store.commit('clearSessionCount')
       }
+    },
+    switchMode() {
+      return this.$store.commit('switchMode')
     },
   },
 }

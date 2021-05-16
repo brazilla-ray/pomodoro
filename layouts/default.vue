@@ -20,12 +20,19 @@
       >
         <aside>
           <section>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate, rerum at modi, fugiat enim, consectetur saepe ab
-              deserunt perspiciatis praesentium nulla quibusdam! Laboriosam
-              optio, eligendi dolorum et at iste dolor?
-            </p>
+            <pre>
+              <code v-pre>
+&lt;template&gt;
+  &lt;header&gt;
+    &lt;h1&gt;
+      pomodoro timer
+    &lt;/h1&gt;
+  &lt;/header&gt;
+    &lt;main&gt;
+      &lt;Nuxt /&gt;
+  &lt;/main&gt;
+              </code>
+            </pre>
           </section>
         </aside>
       </div>
@@ -40,12 +47,24 @@
       >
         <aside>
           <section>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate, rerum at modi, fugiat enim, consectetur saepe ab
-              deserunt perspiciatis praesentium nulla quibusdam! Laboriosam
-              optio, eligendi dolorum et at iste dolor?
-            </p>
+            <pre>
+              <code v-pre>
+&lt;figure&gt;
+      &lt;h2&gt;
+        {{ mode.pomodoro }}
+      &lt;/h2&gt;
+      &lt;figcaption&gt;
+        &lt;pre&gt;
+          &lt;code v-pre&gt;
+&lt;h2&gt;
+  {{ mode.pomodoro }}
+&lt;/h2&gt;
+          &lt;/code&gt;
+        &lt;/pre&gt;
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+              </code>
+            </pre>
           </section>
         </aside>
       </div>

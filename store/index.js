@@ -6,6 +6,7 @@ const mode = {
 
 export const state = () => ({
   sessionCount: 0,
+  currentMode: mode.pomodoro,
   mode,
 })
 
@@ -15,5 +16,8 @@ export const mutations = {
   },
   clearSessionCount(state) {
     state.sessionCount = 0
+  },
+  switchMode(state) {
+    state.currentMode = mode
   },
 }
