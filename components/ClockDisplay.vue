@@ -50,11 +50,9 @@
       </figcaption>
     </figure>
     <section>
-      <button>start</button>
+      <button @click="timer">start</button>
       <h3>{{ currentMode }}</h3>
-      <button @click="switchMode">pomodoro</button>
-      <button>short break</button>
-      <button>long break</button>
+      <button @click="switchMode">toggle mode</button>
       <button @click="increment">sessionCount</button>
       <h3>{{ sessionCount }}</h3>
     </section>
@@ -84,6 +82,23 @@ export default {
     },
     switchMode() {
       return this.$store.commit('switchMode')
+    },
+    timer() {
+      const currentMode = this.$store.state.currentMode
+      const total = currentMode * 60
+      const currentTime = Date.parse(new Date())
+      const endTime = currentTime + total * 1000
+      const difference = endTime - currentTime
+      const remainingTime = Number.parseInt(difference / 1000, 10)
+      const minutes = Number.parseInt((remainingTime / 60) % 60, 10).toString()
+      const seconds = Number.parseInt(remainingTime % 60, 10).toString()
+
+      if (currentMode === this.mode.pomodoro) {
+        this.increment()
+      }
+      return console.log(
+        minutes.padStart(2, '0') + ':' + seconds.padStart(2, '0')
+      )
     },
   },
 }
