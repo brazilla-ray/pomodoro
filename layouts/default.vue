@@ -15,7 +15,7 @@
           flex-initial
           px-8
           pt-8
-          pieton-blue-dark-bg pieton-blue-light-fg
+          pieton-red-dark-fg pieton-blue-light-bg
         "
       >
         <aside>
@@ -30,7 +30,13 @@
         </aside>
       </div>
       <div
-        class="order-3 flex-auto px-8 pt-8 pieton-blue-dark-bg pieton-yellow-fg"
+        class="
+          order-3
+          flex-auto
+          px-8
+          pt-8
+          pieton-red-dark-fg pieton-blue-light-bg
+        "
       >
         <aside>
           <section>

@@ -1,7 +1,21 @@
 <template>
   <div class="flex-col">
     <figure>
-      <h1
+      <h2 class="text-8xl p-8 rounded-full pieton-red-bg pieton-yellow-fg">
+        {{ mode.pomodoro }}
+      </h2>
+      <figcaption class="text-left">
+        <pre>
+          <code v-pre>
+&lt;h2&gt;
+  {{ mode.pomodoro }}
+&lt;/h2&gt;
+          </code>
+        </pre>
+      </figcaption>
+    </figure>
+    <figure>
+      <h2
         class="
           text-8xl
           p-8
@@ -10,47 +24,39 @@
         "
       >
         {{ mode.shortBreak }}
-      </h1>
+      </h2>
       <figcaption class="text-left">
         <pre>
           <code v-pre>
-&lt;h1&gt;
+&lt;h2&gt;
   {{ mode.shortBreak }}
-&lt;/h1&gt;
+&lt;/h2&gt;
           </code>
         </pre>
       </figcaption>
     </figure>
     <figure>
-      <h1 class="text-8xl p-8 rounded-full pieton-red-bg pieton-yellow-fg">
+      <h2 class="text-8xl p-8 rounded-full pieton-blue-bg pieton-near-white-fg">
         {{ mode.longBreak }}
-      </h1>
+      </h2>
       <figcaption class="text-left">
         <pre>
           <code v-pre>
-&lt;h1&gt;
+&lt;h2&gt;
   {{ mode.longBreak }}
-&lt;/h1&gt;
+&lt;/h2&gt;
           </code>
         </pre>
       </figcaption>
     </figure>
-    <figure>
-      <h1 class="text-8xl p-8 rounded-full pieton-blue-bg pieton-near-white-fg">
-        {{ mode.pomodoro }}
-      </h1>
-      <figcaption class="text-left">
-        <pre>
-          <code v-pre>
-&lt;h1&gt;
-  {{ mode.pomodoro }}
-&lt;/h1&gt;
-          </code>
-        </pre>
-      </figcaption>
-    </figure>
-    <h3>{{ currentTime }}</h3>
-    <button>start</button>
+    <section>
+      <button>start</button>
+      <button>pomodoro</button>
+      <button>short break</button>
+      <button>long break</button>
+      <button @click="increment">sessionCount</button>
+      <h3>{{ sessionCount }}</h3>
+    </section>
   </div>
 </template>
 
@@ -60,11 +66,17 @@ export default {
     mode() {
       return this.$store.state.mode
     },
-    total() {
-      return this.$store.state.total
+    sessionCount() {
+      return this.$store.state.sessionCount
     },
-    currentTime() {
-      return this.$store.state.currentTime
+  },
+  methods: {
+    increment() {
+      if (this.$store.state.sessionCount < 4) {
+        return this.$store.commit('increment')
+      } else {
+        return this.$store.commit('clearSessionCount')
+      }
     },
   },
 }

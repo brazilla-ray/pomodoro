@@ -4,11 +4,16 @@ const mode = {
   longBreak: 15,
 }
 
-const total = mode
-const currentTime = Date.parse(new Date())
-
 export const state = () => ({
-  currentTime,
+  sessionCount: 0,
   mode,
-  total,
 })
+
+export const mutations = {
+  increment(state) {
+    state.sessionCount++
+  },
+  clearSessionCount(state) {
+    state.sessionCount = 0
+  },
+}
