@@ -19,13 +19,17 @@ export const mutations = {
   },
   switchMode(state) {
     switch (state.currentMode) {
+      case mode.pomodoro: {
+        if (state.sessionCount < 4) {
+          state.currentMode = mode.shortBreak
+          break
+        } else {
+          state.currentMode = mode.longBreak
+          break
+        }
+      }
       case mode.shortBreak:
-        state.currentMode = mode.longBreak
-        break
-      case mode.pomodoro:
-        state.currentMode = mode.shortBreak
-        break
-      default:
+      case mode.longBreak:
         state.currentMode = mode.pomodoro
     }
   },
