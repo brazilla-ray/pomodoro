@@ -77,7 +77,7 @@ export default {
       if (this.$store.state.sessionCount < 4) {
         return this.$store.commit('increment')
       } else {
-        return this.$store.commit('clearSessionCount')
+        return this.$store.commit('restartSessionCount')
       }
     },
     switchMode() {
@@ -97,7 +97,11 @@ export default {
         this.increment()
       }
       return console.log(
-        minutes.padStart(2, '0') + ':' + seconds.padStart(2, '0')
+        minutes.padStart(2, '0') +
+          ':' +
+          seconds.padStart(2, '0') +
+          '|' +
+          this.sessionCount
       )
     },
   },

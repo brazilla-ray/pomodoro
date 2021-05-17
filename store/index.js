@@ -14,8 +14,8 @@ export const mutations = {
   increment(state) {
     state.sessionCount++
   },
-  clearSessionCount(state) {
-    state.sessionCount = 0
+  restartSessionCount(state) {
+    state.sessionCount = 1
   },
   switchMode(state) {
     switch (state.currentMode) {
