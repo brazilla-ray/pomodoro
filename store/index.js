@@ -4,10 +4,15 @@ const mode = {
   longBreak: 15,
 }
 
+const currentMode = mode.pomodoro
+
+const seconds = currentMode * 60
+
 export const state = () => ({
   sessionCount: 0,
-  currentMode: mode.pomodoro,
+  currentMode,
   mode,
+  seconds,
 })
 
 export const mutations = {
@@ -32,5 +37,8 @@ export const mutations = {
       case mode.longBreak:
         state.currentMode = mode.pomodoro
     }
+  },
+  countdown(state) {
+    state.seconds--
   },
 }
