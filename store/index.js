@@ -1,18 +1,18 @@
 const mode = {
-  pomodoro: 25,
+  pomodoro: 1,
   shortBreak: 5,
   longBreak: 15,
 }
 
 const currentMode = mode.pomodoro
 
-const seconds = currentMode * 60
+const remainingTime = currentMode * 60
 
 export const state = () => ({
   sessionCount: 0,
   currentMode,
+  remainingTime,
   mode,
-  seconds,
 })
 
 export const mutations = {
@@ -39,6 +39,6 @@ export const mutations = {
     }
   },
   countdown(state) {
-    state.seconds--
+    state.remainingTime--
   },
 }

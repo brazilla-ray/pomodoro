@@ -52,7 +52,7 @@
     <section>
       <button @click="timer">start</button>
       <h3>{{ currentMode }}</h3>
-      <h3>{{ seconds }}</h3>
+      <h3>{{ minutes }}:{{ seconds }}</h3>
       <button @click="switchMode">toggle mode</button>
       <button @click="increment">sessionCount</button>
       <h3>{{ sessionCount }}</h3>
@@ -72,8 +72,18 @@ export default {
     sessionCount() {
       return this.$store.state.sessionCount
     },
+    remainingTime() {
+      return this.$store.state.remainingTime
+    },
+    minutes() {
+      return Number.parseInt((this.remainingTime / 60) % 60, 10)
+        .toString()
+        .padStart(2, '0')
+    },
     seconds() {
-      return this.$store.state.seconds
+      return Number.parseInt(this.remainingTime % 60, 10)
+        .toString()
+        .padStart(2, '0')
     },
   },
   methods: {
@@ -89,9 +99,10 @@ export default {
     },
     timer() {
       const interval = setInterval(() => {
-        if (this.$store.state.currentMode < 0) {
+        if (this.$store.state.remainingTime === 0) {
           clearInterval(interval)
           this.switchMode()
+          console.log('ding!')
         } else {
           this.$store.commit('countdown')
         }
