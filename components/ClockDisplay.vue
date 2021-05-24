@@ -50,7 +50,8 @@
       </figcaption>
     </figure>
     <section>
-      <button @click="timer">start</button>
+      <button @click="startTimer">start</button>
+      <button @click="stopTimer">stop</button>
       <h3>{{ currentMode }}</h3>
       <h3>{{ minutes }}:{{ seconds }}</h3>
       <button @click="switchMode">toggle mode</button>
@@ -62,6 +63,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      interval: '',
+    }
+  },
   computed: {
     mode() {
       return this.$store.state.mode
@@ -97,16 +103,20 @@ export default {
     switchMode() {
       return this.$store.commit('switchMode')
     },
-    timer() {
-      const interval = setInterval(() => {
+    startTimer() {
+      this.interval = setInterval(() => {
         if (this.$store.state.remainingTime === 0) {
-          clearInterval(interval)
+          clearInterval(this.interval)
           this.switchMode()
-          console.log('ding!')
+          this.$store.commit('resetTimer')
+          return this.startTimer()
         } else {
           this.$store.commit('countdown')
         }
       }, 1000)
+    },
+    stopTimer() {
+      return clearInterval(this.interval)
     },
   },
 }

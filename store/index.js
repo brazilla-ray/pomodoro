@@ -41,4 +41,7 @@ export const mutations = {
   countdown(state) {
     state.remainingTime--
   },
+  resetTimer(state) {
+    return (state.remainingTime = state.currentMode * 60)
+  },
 }
