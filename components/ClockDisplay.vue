@@ -1,10 +1,13 @@
 <template>
   <div class="container">
-    <section>
-      <button @click="startTimer">start</button>
-      <button @click="stopTimer">stop</button>
+    <section class="flex">
+      <button class="pieton-gray-light-bg order-1" @click="startTimer">
+        start
+      </button>
+      <button class="pieton-gray-light-bg order-3" @click="stopTimer">
+        stop
+      </button>
       <figure
-        max-w-min
         class="
           p-10
           mx-auto
@@ -12,12 +15,12 @@
           rounded-full
           display-block
           w-80
+          order-2
         "
       >
         <span class="text-8xl inline-block w-30">{{ minutes }}</span
         ><span class="text-2xl inline-block w-10">:{{ seconds }}</span>
       </figure>
-      <h3>{{ sessionCount }}</h3>
     </section>
   </div>
 </template>
