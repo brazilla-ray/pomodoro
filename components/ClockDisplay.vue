@@ -114,7 +114,7 @@ export default {
         } else {
           this.$store.commit('countdown')
         }
-      }, 100)
+      }, 1000)
     },
     stopTimer() {
       return clearInterval(this.interval)
