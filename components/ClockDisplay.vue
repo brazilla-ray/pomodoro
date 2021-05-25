@@ -1,22 +1,39 @@
 <template>
   <div class="container">
-    <section class="flex">
-      <button class="pieton-gray-light-bg order-1" @click="startTimer">
+    <section class="flex items-center">
+      <button
+        class="
+          pieton-gray-light-bg
+          order-1
+          h-auto
+          px-8
+          pb-1
+          rounded-full
+          custom-border
+          mr-4
+        "
+        @click="startTimer"
+      >
         start
       </button>
-      <button class="pieton-gray-light-bg order-3" @click="stopTimer">
+      <button
+        class="
+          pieton-gray-light-bg
+          order-3
+          h-auto
+          px-8
+          pb-1
+          rounded-full
+          custom-border
+          ml-4
+        "
+        @click="stopTimer"
+      >
         stop
       </button>
       <figure
-        class="
-          p-10
-          mx-auto
-          pieton-red-bg pieton-yellow-fg
-          rounded-full
-          display-block
-          w-80
-          order-2
-        "
+        class="p-10 mx-auto rounded-full display-block w-80 order-2"
+        :class="counterClasses"
       >
         <span class="text-8xl inline-block w-30">{{ minutes }}</span
         ><span class="text-2xl inline-block w-10">:{{ seconds }}</span>
@@ -54,6 +71,13 @@ export default {
       return Number.parseInt(this.remainingTime % 60, 10)
         .toString()
         .padStart(2, '0')
+    },
+    counterClasses() {
+      return {
+        'counter-red': this.currentMode === this.mode.pomodoro,
+        'counter-light-red': this.currentMode === this.mode.shortBreak,
+        'counter-blue': this.currentMode === this.mode.longBreak,
+      }
     },
   },
   methods: {
@@ -93,9 +117,23 @@ export default {
 }
 
 .custom-border {
-  border-width: 2rem;
+  border-width: 0.15rem;
   border-style: solid;
-  border-color: var(--pieton-red);
-  border-radius: 50%;
+  border-color: var(--pieton-yellow-dark);
+}
+
+.counter-red {
+  background-color: var(--pieton-red);
+  color: var(--pieton-yellow);
+}
+
+.counter-light-red {
+  background-color: var(--pieton-red-light);
+  color: var(--pieton-blue-dark);
+}
+
+.counter-blue {
+  background-color: var(--pieton-blue);
+  color: var(--pieton-near-white);
 }
 </style>

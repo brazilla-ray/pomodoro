@@ -1,5 +1,5 @@
 <template>
-  <div class="container px-8">
+  <div class="container px-8 pieton-near-white-bg">
     <clock-display></clock-display>
   </div>
 </template>
