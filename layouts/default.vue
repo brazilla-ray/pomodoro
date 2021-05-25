@@ -1,7 +1,9 @@
 <template>
   <div>
     <header class="pieton-red-dark-bg h-auto flex justify-center">
-      <h1 class="pieton-blue-light-fg text-8xl py-8">pomodoro timer</h1>
+      <h1 class="pieton-blue-light-fg text-5xl md:text-8xl py-8">
+        pomodoro timer
+      </h1>
     </header>
     <main>
       <Nuxt />
