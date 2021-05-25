@@ -107,13 +107,14 @@ export default {
       this.interval = setInterval(() => {
         if (this.$store.state.remainingTime === 0) {
           clearInterval(this.interval)
+          if (this.currentMode === this.mode.pomodoro) this.increment()
           this.switchMode()
           this.$store.commit('resetTimer')
           return this.startTimer()
         } else {
           this.$store.commit('countdown')
         }
-      }, 1000)
+      }, 100)
     },
     stopTimer() {
       return clearInterval(this.interval)
