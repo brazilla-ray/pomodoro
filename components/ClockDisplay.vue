@@ -1,61 +1,22 @@
 <template>
-  <div class="flex-col">
-    <figure>
-      <h2 class="text-8xl p-8 rounded-full pieton-red-bg pieton-yellow-fg">
-        {{ mode.pomodoro }}
-      </h2>
-      <figcaption class="text-left">
-        <pre>
-          <code v-pre>
-&lt;h2&gt;
-  {{ mode.pomodoro }}
-&lt;/h2&gt;
-          </code>
-        </pre>
-      </figcaption>
-    </figure>
-    <figure>
-      <h2
-        class="
-          text-8xl
-          p-8
-          rounded-full
-          pieton-red-light-bg pieton-blue-dark-fg
-        "
-      >
-        {{ mode.shortBreak }}
-      </h2>
-      <figcaption class="text-left">
-        <pre>
-          <code v-pre>
-&lt;h2&gt;
-  {{ mode.shortBreak }}
-&lt;/h2&gt;
-          </code>
-        </pre>
-      </figcaption>
-    </figure>
-    <figure>
-      <h2 class="text-8xl p-8 rounded-full pieton-blue-bg pieton-near-white-fg">
-        {{ mode.longBreak }}
-      </h2>
-      <figcaption class="text-left">
-        <pre>
-          <code v-pre>
-&lt;h2&gt;
-  {{ mode.longBreak }}
-&lt;/h2&gt;
-          </code>
-        </pre>
-      </figcaption>
-    </figure>
+  <div class="container">
     <section>
       <button @click="startTimer">start</button>
       <button @click="stopTimer">stop</button>
-      <h3>{{ currentMode }}</h3>
-      <h3>{{ minutes }}:{{ seconds }}</h3>
-      <button @click="switchMode">toggle mode</button>
-      <button @click="increment">sessionCount</button>
+      <figure
+        max-w-min
+        class="
+          p-10
+          mx-auto
+          pieton-red-bg pieton-yellow-fg
+          rounded-full
+          display-block
+          w-80
+        "
+      >
+        <span class="text-8xl inline-block w-30">{{ minutes }}</span
+        ><span class="text-2xl inline-block w-10">:{{ seconds }}</span>
+      </figure>
       <h3>{{ sessionCount }}</h3>
     </section>
   </div>
@@ -126,5 +87,12 @@ export default {
 <style lang="css" scoped>
 .container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
+}
+
+.custom-border {
+  border-width: 2rem;
+  border-style: solid;
+  border-color: var(--pieton-red);
+  border-radius: 50%;
 }
 </style>

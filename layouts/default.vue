@@ -3,72 +3,9 @@
     <header class="pieton-red-dark-bg h-auto flex justify-center">
       <h1 class="pieton-blue-light-fg text-8xl py-8">pomodoro timer</h1>
     </header>
-    <div class="flex">
-      <div class="order-2 flex-auto w-96 pt-8">
-        <main>
-          <Nuxt />
-        </main>
-      </div>
-      <div
-        class="
-          order-1
-          flex-initial
-          px-8
-          pt-8
-          pieton-red-dark-fg pieton-blue-light-bg
-        "
-      >
-        <aside>
-          <section>
-            <pre>
-              <code v-pre>
-&lt;template&gt;
-  &lt;header&gt;
-    &lt;h1&gt;
-      pomodoro timer
-    &lt;/h1&gt;
-  &lt;/header&gt;
-    &lt;main&gt;
-      &lt;Nuxt /&gt;
-  &lt;/main&gt;
-              </code>
-            </pre>
-          </section>
-        </aside>
-      </div>
-      <div
-        class="
-          order-3
-          flex-auto
-          px-8
-          pt-8
-          pieton-red-dark-fg pieton-blue-light-bg
-        "
-      >
-        <aside>
-          <section>
-            <pre>
-              <code v-pre>
-&lt;figure&gt;
-      &lt;h2&gt;
-        {{ mode.pomodoro }}
-      &lt;/h2&gt;
-      &lt;figcaption&gt;
-        &lt;pre&gt;
-          &lt;code v-pre&gt;
-&lt;h2&gt;
-  {{ mode.pomodoro }}
-&lt;/h2&gt;
-          &lt;/code&gt;
-        &lt;/pre&gt;
-      &lt;/figcaption&gt;
-    &lt;/figure&gt;
-              </code>
-            </pre>
-          </section>
-        </aside>
-      </div>
-    </div>
+    <main>
+      <Nuxt />
+    </main>
   </div>
 </template>
 
