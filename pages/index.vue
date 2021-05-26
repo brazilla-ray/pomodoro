@@ -1,5 +1,5 @@
 <template>
-  <div class="container px-8 pieton-near-white-bg">
+  <div>
     <clock-display></clock-display>
   </div>
 </template>
@@ -18,7 +18,4 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
 </style>

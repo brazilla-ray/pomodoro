@@ -1,45 +1,50 @@
 <template>
-  <div class="container">
-    <section class="flex items-center">
-      <button
-        class="
-          pieton-gray-light-bg
-          order-1
-          h-auto
-          px-8
-          pb-1
-          rounded-full
-          custom-border
-          mr-4
-        "
-        @click="startTimer"
-      >
-        start
-      </button>
-      <button
-        class="
-          pieton-gray-light-bg
-          order-3
-          h-auto
-          px-8
-          pb-1
-          rounded-full
-          custom-border
-          ml-4
-        "
-        @click="stopTimer"
-      >
-        stop
-      </button>
+  <section>
+    <div class="flex flex-row flex-wrap justify-center">
+      <!-- buttons -->
+      <div class="flex flex-row">
+        <button
+          class="
+            pieton-gray-light-bg
+            h-auto
+            max-w-min
+            pb-1
+            mx-8
+            my-10
+            flex-1
+            rounded-full
+            custom-border
+          "
+          @click="startTimer"
+        >
+          <span class="px-4">start</span>
+        </button>
+        <button
+          class="
+            pieton-gray-light-bg
+            h-auto
+            max-w-min
+            pb-1
+            mx-8
+            my-10
+            rounded-full
+            custom-border
+          "
+          @click="stopTimer"
+        >
+          <span class="px-4">stop</span>
+        </button>
+      </div>
+      <!-- timer -->
       <figure
-        class="p-10 mx-auto rounded-full display-block w-80 order-2"
+        class="flex justify-center items-end p-10 mx-auto rounded-full w-80"
         :class="counterClasses"
       >
         <span class="text-8xl inline-block w-30">{{ minutes }}</span
         ><span class="text-2xl inline-block w-10">:{{ seconds }}</span>
       </figure>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -112,10 +117,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-
 .custom-border {
   border-width: 0.15rem;
   border-style: solid;

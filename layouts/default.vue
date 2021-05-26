@@ -1,18 +1,22 @@
 <template>
-  <div>
-    <header class="pieton-red-dark-bg h-auto flex justify-center">
-      <h1 class="pieton-blue-light-fg text-5xl md:text-8xl py-8">
+  <div class="pieton-near-white-bg h-screen">
+    <header class="pieton-red-dark-bg h-auto">
+      <h1 class="pieton-blue-light-fg text-5xl md:text-8xl py-8 text-center">
         pomodoro timer
       </h1>
-      <a
-        href="https://github.com/brazilla-ray/pomodoro"
-        class="self-end justify-self-end border-b-2 pieton-near-white-fg mb-2"
-        >github</a
-      >
     </header>
     <main>
       <Nuxt />
     </main>
+    <footer class="h-48 pieton-near-white-bg">
+      <div class="max-w-min mx-auto relative -bottom-2/4">
+        <a
+          href="https://github.com/brazilla-ray/pomodoro"
+          class="border-b-2 pieton-near-black-fg mb-2"
+          >github</a
+        >
+      </div>
+    </footer>
   </div>
 </template>
 
