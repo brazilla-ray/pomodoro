@@ -1,20 +1,5 @@
-# pomo-nuxt
+# pomodoro timer
 
-## Build Setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+This is a (very) simple pomodoro timer. Lots of work left to be done, but it does what it's supposed to.  
+  
+It's built with NuxtJS, and uses Vuex to manage state (which is probably overkill, but there it is.)
