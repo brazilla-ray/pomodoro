@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-w-min mx-auto">
     <clock-display></clock-display>
   </div>
 </template>
