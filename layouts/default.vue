@@ -4,6 +4,11 @@
       <h1 class="pieton-blue-light-fg text-5xl md:text-8xl py-8">
         pomodoro timer
       </h1>
+      <a
+        href="https://github.com/brazilla-ray/pomodoro"
+        class="self-end justify-self-end border-b-2 pieton-near-white-fg mb-2"
+        >github</a
+      >
     </header>
     <main>
       <Nuxt />
